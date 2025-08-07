@@ -7,9 +7,9 @@ import Illustration from '@/components/Illustration';
 import { useScrollAnimation } from '@/hooks/useScrollAnimation';
 
 export default function Home() {
-  const { elementRef: heroRef, isVisible: heroVisible } = useScrollAnimation();
-  const { elementRef: generatorRef, isVisible: generatorVisible } = useScrollAnimation();
-  const { elementRef: aboutRef, isVisible: aboutVisible } = useScrollAnimation();
+  const { ref: heroRef, isVisible: heroVisible } = useScrollAnimation();
+  const { ref: generatorRef, isVisible: generatorVisible } = useScrollAnimation();
+  const { ref: aboutRef, isVisible: aboutVisible } = useScrollAnimation();
 
   useEffect(() => {
     // Handle stagger animations for grid items with improved timing
@@ -20,12 +20,12 @@ export default function Home() {
         if (entry.isIntersecting) {
           setTimeout(() => {
             entry.target.classList.add('visible');
-          }, index * 150); // Increased delay for smoother effect
+          }, index * 100); // Reduced delay for better performance
         }
       });
     }, {
       threshold: 0.1,
-      rootMargin: '0px 0px -100px 0px', // Increased margin for earlier triggering
+      rootMargin: '0px 0px -50px 0px', // Reduced margin for better performance
     });
 
     staggerItems.forEach(item => observer.observe(item));
@@ -70,7 +70,7 @@ export default function Home() {
               className={`space-y-6 lg:space-y-8 section-fade-in ${heroVisible ? 'visible' : ''}`}
             >
               <div className="space-y-4">
-                <h1 className="heading-responsive font-bold gradient-text leading-tight">
+                <h1 className="heading-responsive font-bold gradient-text-purple leading-tight">
                   Share Your
                   <span className="text-gray-300 block">Wi-Fi Instantly</span>
                 </h1>
@@ -80,14 +80,14 @@ export default function Home() {
                 </p>
               </div>
               
-              <div className="mobile-stack gap-4">
+              <div className="flex flex-col sm:flex-row gap-4">
                 <a 
                   href="#generator"
-                  className="glass-dark hover:bg-white/20 text-white font-semibold py-3 sm:py-4 px-6 sm:px-8 rounded-xl transition-all duration-300 text-center glow-strong hover-lift blur-layer-1 mobile-first"
+                  className="glass-purple hover:bg-purple-500/20 text-white font-semibold py-3 sm:py-4 px-6 sm:px-8 rounded-xl transition-all duration-300 text-center glow-purple hover-lift blur-layer-1 flex-1 sm:flex-none"
                 >
                   Get Started
                 </a>
-                <button className="glass-strong border border-white/20 hover:border-white/40 text-white font-semibold py-3 sm:py-4 px-6 sm:px-8 rounded-xl transition-all duration-300 glow-strong hover-lift blur-layer-1 mobile-first">
+                <button className="glass-blue border border-blue-500/20 hover:border-blue-500/40 text-white font-semibold py-3 sm:py-4 px-6 sm:px-8 rounded-xl transition-all duration-300 glow-blue hover-lift blur-layer-1 flex-1 sm:flex-none">
                   Learn More
                 </button>
               </div>
@@ -95,25 +95,25 @@ export default function Home() {
               {/* Features with enhanced glass and responsive grid */}
               <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6 pt-6 lg:pt-8">
                 <div className="flex flex-col sm:flex-row items-center sm:items-start space-y-2 sm:space-y-0 sm:space-x-3 stagger-item">
-                  <div className="w-8 h-8 glass-strong rounded-lg flex items-center justify-center glow-strong hover-lift blur-layer-1">
+                  <div className="w-8 h-8 glass-cyan rounded-lg flex items-center justify-center glow-cyan hover-lift blur-layer-1">
                     <span className="text-white text-lg">⚡</span>
                   </div>
                   <span className="text-xs sm:text-sm font-medium text-gray-300 text-center sm:text-left">Instant Connection</span>
                 </div>
                 <div className="flex flex-col sm:flex-row items-center sm:items-start space-y-2 sm:space-y-0 sm:space-x-3 stagger-item">
-                  <div className="w-8 h-8 glass-strong rounded-lg flex items-center justify-center glow-strong hover-lift blur-layer-1">
+                  <div className="w-8 h-8 glass-green rounded-lg flex items-center justify-center glow-green hover-lift blur-layer-1">
                     <span className="text-white text-lg">🔒</span>
                   </div>
                   <span className="text-xs sm:text-sm font-medium text-gray-300 text-center sm:text-left">Secure Sharing</span>
                 </div>
                 <div className="flex flex-col sm:flex-row items-center sm:items-start space-y-2 sm:space-y-0 sm:space-x-3 stagger-item">
-                  <div className="w-8 h-8 glass-strong rounded-lg flex items-center justify-center glow-strong hover-lift blur-layer-1">
+                  <div className="w-8 h-8 glass-pink rounded-lg flex items-center justify-center glow-pink hover-lift blur-layer-1">
                     <span className="text-white text-lg">📱</span>
                   </div>
                   <span className="text-xs sm:text-sm font-medium text-gray-300 text-center sm:text-left">Mobile Friendly</span>
                 </div>
                 <div className="flex flex-col sm:flex-row items-center sm:items-start space-y-2 sm:space-y-0 sm:space-x-3 stagger-item">
-                  <div className="w-8 h-8 glass-strong rounded-lg flex items-center justify-center glow-strong hover-lift blur-layer-1">
+                  <div className="w-8 h-8 glass-orange rounded-lg flex items-center justify-center glow-orange hover-lift blur-layer-1">
                     <span className="text-white text-lg">🎨</span>
                   </div>
                   <span className="text-xs sm:text-sm font-medium text-gray-300 text-center sm:text-left">Customizable</span>
@@ -136,7 +136,7 @@ export default function Home() {
             ref={generatorRef}
             className={`text-center mb-8 lg:mb-12 section-fade-in ${generatorVisible ? 'visible' : ''}`}
           >
-            <h2 className="heading-responsive font-bold gradient-text mb-4">
+            <h2 className="heading-responsive font-bold gradient-text-blue mb-4">
               Wi-Fi QR Code Generator
             </h2>
             <p className="text-responsive text-gray-300 max-w-2xl mx-auto">
@@ -155,7 +155,7 @@ export default function Home() {
             ref={aboutRef}
             className={`text-center mb-8 lg:mb-12 section-fade-in ${aboutVisible ? 'visible' : ''}`}
           >
-            <h2 className="heading-responsive font-bold gradient-text mb-4">
+            <h2 className="heading-responsive font-bold gradient-text-cyan mb-4">
               How It Works
             </h2>
             <p className="text-responsive text-gray-300 max-w-2xl mx-auto">
@@ -164,8 +164,8 @@ export default function Home() {
           </div>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            <div className="text-center space-y-4 stagger-item hover-lift">
-              <div className="w-12 h-12 sm:w-16 sm:h-16 glass-strong rounded-full flex items-center justify-center mx-auto glow-strong blur-layer-1">
+            <div className="text-center space-y-4 stagger-item">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 glass-purple rounded-full flex items-center justify-center mx-auto glow-purple blur-layer-1">
                 <span className="text-xl sm:text-2xl">📝</span>
               </div>
               <h3 className="text-lg sm:text-xl font-semibold text-white">1. Enter Details</h3>
@@ -174,8 +174,8 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="text-center space-y-4 stagger-item hover-lift">
-              <div className="w-12 h-12 sm:w-16 sm:h-16 glass-strong rounded-full flex items-center justify-center mx-auto glow-strong blur-layer-1">
+            <div className="text-center space-y-4 stagger-item">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 glass-blue rounded-full flex items-center justify-center mx-auto glow-blue blur-layer-1">
                 <span className="text-xl sm:text-2xl">🎯</span>
               </div>
               <h3 className="text-lg sm:text-xl font-semibold text-white">2. Generate QR Code</h3>
@@ -184,8 +184,8 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="text-center space-y-4 stagger-item hover-lift md:col-span-2 lg:col-span-1">
-              <div className="w-12 h-12 sm:w-16 sm:h-16 glass-strong rounded-full flex items-center justify-center mx-auto glow-strong blur-layer-1">
+            <div className="text-center space-y-4 stagger-item md:col-span-2 lg:col-span-1">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 glass-green rounded-full flex items-center justify-center mx-auto glow-green blur-layer-1">
                 <span className="text-xl sm:text-2xl">📱</span>
               </div>
               <h3 className="text-lg sm:text-xl font-semibold text-white">3. Scan & Connect</h3>

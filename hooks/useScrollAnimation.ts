@@ -1,10 +1,9 @@
 'use client';
+import { useEffect, useState, useRef } from 'react';
 
-import { useEffect, useRef, useState } from 'react';
-
-export const useScrollAnimation = (threshold = 0.1) => {
+export function useScrollAnimation() {
   const [isVisible, setIsVisible] = useState(false);
-  const elementRef = useRef<HTMLDivElement>(null);
+  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -14,22 +13,21 @@ export const useScrollAnimation = (threshold = 0.1) => {
         }
       },
       {
-        threshold,
-        rootMargin: '0px 0px -50px 0px',
+        rootMargin: '-50px', // Reduced from -100px
+        threshold: 0.1, // Reduced threshold for better performance
       }
     );
 
-    const currentElement = elementRef.current;
-    if (currentElement) {
-      observer.observe(currentElement);
+    if (ref.current) {
+      observer.observe(ref.current);
     }
 
     return () => {
-      if (currentElement) {
-        observer.unobserve(currentElement);
+      if (ref.current) {
+        observer.unobserve(ref.current);
       }
     };
-  }, [threshold]);
+  }, []);
 
-  return { elementRef, isVisible };
-}; 
+  return { ref, isVisible };
+} 

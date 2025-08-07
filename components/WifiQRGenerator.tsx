@@ -126,7 +126,7 @@ const WifiQRGenerator: React.FC = () => {
                     value={wifiConfig.ssid}
                     onChange={(e) => handleInputChange('ssid', e.target.value)}
                     placeholder="Enter your Wi-Fi network name"
-                    className="w-full px-3 sm:px-4 py-2 sm:py-3 glass-strong rounded-lg sm:rounded-xl focus:ring-2 focus:ring-white/50 focus:border-white/50 transition-all duration-300 text-white placeholder-gray-400 blur-layer-1 text-sm sm:text-base"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 glass-strong rounded-lg sm:rounded-xl focus:ring-2 focus:ring-white/50 focus:border-white/50 hover:bg-white/10 hover:border-white/30 transition-all duration-300 text-white placeholder-gray-400 blur-layer-1 text-sm sm:text-base"
                   />
                 </div>
 
@@ -141,7 +141,7 @@ const WifiQRGenerator: React.FC = () => {
                       value={wifiConfig.password}
                       onChange={(e) => handleInputChange('password', e.target.value)}
                       placeholder="Enter your Wi-Fi password"
-                      className="w-full px-3 sm:px-4 py-2 sm:py-3 pr-10 sm:pr-12 glass-strong rounded-lg sm:rounded-xl focus:ring-2 focus:ring-white/50 focus:border-white/50 transition-all duration-300 text-white placeholder-gray-400 blur-layer-1 text-sm sm:text-base"
+                      className="w-full px-3 sm:px-4 py-2 sm:py-3 pr-10 sm:pr-12 glass-strong rounded-lg sm:rounded-xl focus:ring-2 focus:ring-white/50 focus:border-white/50 hover:bg-white/10 hover:border-white/30 transition-all duration-300 text-white placeholder-gray-400 blur-layer-1 text-sm sm:text-base"
                     />
                     <button
                       type="button"
@@ -161,7 +161,7 @@ const WifiQRGenerator: React.FC = () => {
                   <select
                     value={wifiConfig.encryption}
                     onChange={(e) => handleInputChange('encryption', e.target.value as 'WPA' | 'WEP' | 'nopass')}
-                    className="w-full px-3 sm:px-4 py-2 sm:py-3 glass-strong rounded-lg sm:rounded-xl focus:ring-2 focus:ring-white/50 focus:border-white/50 transition-all duration-300 text-white blur-layer-1 text-sm sm:text-base"
+                    className="w-full px-3 sm:px-4 py-2 sm:py-3 glass-strong rounded-lg sm:rounded-xl focus:ring-2 focus:ring-white/50 focus:border-white/50 hover:bg-white/10 hover:border-white/30 transition-all duration-300 text-white blur-layer-1 text-sm sm:text-base cursor-pointer"
                   >
                     <option value="WPA" className="bg-black text-white">WPA/WPA2/WPA3</option>
                     <option value="WEP" className="bg-black text-white">WEP</option>
@@ -176,7 +176,7 @@ const WifiQRGenerator: React.FC = () => {
                       type="checkbox"
                       checked={wifiConfig.hidden}
                       onChange={(e) => handleInputChange('hidden', e.target.checked)}
-                      className="w-4 h-4 text-white glass-strong border-white/30 rounded focus:ring-white/50"
+                      className="w-4 h-4 text-white glass-strong border-white/30 rounded focus:ring-white/50 hover:border-white/50 transition-all duration-300 cursor-pointer"
                     />
                     <span className="text-sm text-gray-300">Hidden Network</span>
                   </label>

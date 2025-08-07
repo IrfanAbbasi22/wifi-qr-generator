@@ -50,6 +50,37 @@ A modern, responsive web application for generating QR codes that allow guests t
    - Print it or display it on a screen
    - Guests scan with their smartphone camera
 
+## 📱 PWA Support
+
+This application is built as a Progressive Web App (PWA) with the following features:
+
+### PWA Features
+- **Installable** - Add to home screen on mobile and desktop
+- **Offline Capable** - Works without internet connection
+- **App-like Experience** - Full-screen mode and native feel
+- **Fast Loading** - Optimized for performance
+- **Responsive Design** - Works on all devices
+
+### PWA Manifest
+- **App Name**: Wi-Fi QR Code Generator
+- **Short Name**: Wi-Fi QR
+- **Theme Color**: Purple (#9333ea)
+- **Background Color**: Black (#000000)
+- **Display Mode**: Standalone
+- **Orientation**: Portrait-primary
+
+### Installation
+- **Android**: "Add to Home Screen" from browser menu
+- **iOS**: "Add to Home Screen" from Safari share menu
+- **Desktop**: "Install" button in browser address bar
+- **Windows**: "Install" option in browser menu
+
+### PWA Benefits
+- **No App Store Required** - Install directly from browser
+- **Automatic Updates** - Always get the latest version
+- **Small Size** - Much smaller than native apps
+- **Cross-Platform** - Works on any device with a browser
+
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
