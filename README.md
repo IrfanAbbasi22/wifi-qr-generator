@@ -1,6 +1,6 @@
 # Wi-Fi QR Code Generator
 
-A modern, responsive web application for generating QR codes that allow guests to easily connect to your Wi-Fi network by scanning with their smartphone camera.
+A modern, responsive web application for generating QR codes that allow guests to easily connect to your Wi-Fi network by scanning with their smartphone camera. Built with Next.js 14, TypeScript, and Tailwind CSS, featuring stunning glassmorphism design with smooth animations.
 
 ## 🚀 Features
 
@@ -9,7 +9,7 @@ A modern, responsive web application for generating QR codes that allow guests t
 - **Hidden Network Support**: Generate QR codes for hidden networks
 - **Download & Share**: Download QR codes as PNG images or copy to clipboard
 - **Responsive Design**: Works perfectly on desktop and mobile devices
-- **Modern UI**: Clean, professional interface with smooth animations
+- **Modern UI**: Clean, professional interface with glassmorphism effects
 - **Security**: All processing happens locally in your browser
 
 ## 📦 Installation
